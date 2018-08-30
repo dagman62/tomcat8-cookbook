@@ -1,0 +1,26 @@
+wrapper.java.command=<%= @javahome %>/bin/java
+
+wrapper.logfile=../logs/wrapper.log
+
+wrapper.java.additional.1=-Dcatalina.base=<%= @tchome %>
+wrapper.java.additional.2=-Dcatalina.home=<%= @tchome %>
+wrapper.java.additional.3=-Djava.io.tmpdir=<%= @tchome %>/temp
+
+wrapper.java.classpath.1=<%= @tchome %>/lib/wrapper.jar
+wrapper.java.classpath.2=<%= @tchome %>/bin/bootstrap.jar
+wrapper.java.classpath.3=<%= @tchome %>/bin/tomcat-juli.jar
+wrapper.java.classpath.4=-Xms512M
+wrapper.java.classpath.5=-Xmx1024M
+wrapper.java.classpath.6=-XX:+UseParallelGC
+
+wrapper.java.library.path.1=<%= @tchome %>/lib
+
+wrapper.java.mainclass=org.tanukisoftware.wrapper.WrapperStartStopApp
+
+wrapper.app.parameter.1=org.apache.catalina.startup.Bootstrap
+wrapper.app.parameter.2=1
+wrapper.app.parameter.3=start
+wrapper.app.parameter.4=org.apache.catalina.startup.Bootstrap
+wrapper.app.parameter.5=TRUE
+wrapper.app.parameter.6=1
+wrapper.app.parameter.7=stop

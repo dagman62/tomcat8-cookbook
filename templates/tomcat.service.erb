@@ -1,0 +1,25 @@
+[Unit]
+Description=Tomcat - instance
+After=syslog.target network.target
+
+[Service]
+Type=forking
+
+User=root
+Group=root
+
+WorkingDirectory=<%= @tchome %>
+
+Environment="JAVA_HOME=<%= @javahome %>"
+
+Environment="CATALINA_BASE=<%= @tchome %>"
+Environment="CATALINA_HOME=<%= @tchome %>"
+
+ExecStart=<%= @tchome %>/bin/wrapper.sh start
+ExecStop=<%= @tchome %>/bin/wrapper.sh stop
+
+#RestartSec=10
+#Restart=always
+
+[Install]
+WantedBy=multi-user.target
